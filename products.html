@@ -104,10 +104,12 @@
     }
     .product-thumbs img {
       width: 100%;
-      height: 140px;
-      object-fit: cover;
+      height: auto;            /* let the image keep its natural aspect ratio */
+      object-fit: contain;     /* scale the entire image inside its box */
+      max-height: 200px;       /* prevent it from growing too tall */
       border-radius: 4px;
     }
+
   </style>
 </head>
 <body>
@@ -127,7 +129,7 @@
 
   <div class="filters">
     <button data-filter="all" class="active">All</button>
-    <button data-filter="electric">Electric Vehicles</button>
+    <button data-filter="electric">Vehicles</button>
     <button data-filter="rc">RC & Drones</button>
     <button data-filter="gadget">Gadget Toys</button>
     <button data-filter="smart">Smart Electronics</button>
@@ -138,10 +140,10 @@
   <div class="section-grid">
     <!-- Electric Vehicles -->
     <div class="card" data-category="electric">
-      <h2>Electric Vehicles</h2>
+      <h2>Vehicles</h2>
       <div class="product-thumbs">
-        <img src="images/hoverbike.jpg" alt="Hoverbike">
-        <img src="images/e_scooter.jpg" alt="Compact E-Scooter">
+        <img src="images/vehicle3.jpg" alt="Hoverbike">
+        <img src="images/vehicle4.jpg" alt="Compact E-Scooter">
       </div>
     </div>
 
@@ -149,8 +151,8 @@
     <div class="card" data-category="rc">
       <h2>RC & Drones</h2>
       <div class="product-thumbs">
-        <img src="images/rc_jet.jpg" alt="RC Jet Plane">
-        <img src="images/fpv_drone.jpg" alt="FPV Racing Drone">
+        <img src="images/rc3.jpg" alt="RC Jet Plane">
+        <img src="images/rc4.png" alt="FPV Racing Drone">
       </div>
     </div>
 
@@ -158,8 +160,8 @@
     <div class="card" data-category="gadget">
       <h2>Gadget Toys</h2>
       <div class="product-thumbs">
-        <img src="images/magnetic_cube.jpg" alt="Magnetic Fidget Cube">
-        <img src="images/hologram_toy.jpg" alt="Mini Hologram Toy">
+        <img src="images/gadget2.jpg" alt="Magnetic Fidget Cube">
+        <img src="images/gadget3.jpg" alt="Mini Hologram Toy">
       </div>
     </div>
 
@@ -167,8 +169,8 @@
     <div class="card" data-category="smart">
       <h2>Smart Electronics</h2>
       <div class="product-thumbs">
-        <img src="images/voice_assistant.jpg" alt="Voice Assistant">
-        <img src="images/ai_pet_feeder.jpg" alt="AI Pet Feeder">
+        <img src="images/elec2.jpg" alt="Voice Assistant">
+        <img src="images/elec3.jpg" alt="AI Pet Feeder">
       </div>
     </div>
 
@@ -176,8 +178,8 @@
     <div class="card" data-category="robots">
       <h2>Toy Robots</h2>
       <div class="product-thumbs">
-        <img src="images/robot_arm.jpg" alt="Robot Arm">
-        <img src="images/dancing_robot.jpg" alt="Dancing Robot">
+        <img src="images/robo2.jpg" alt="Robot Arm">
+        <img src="images/robot3.jpg" alt="Dancing Robot">
       </div>
     </div>
 
@@ -185,8 +187,8 @@
     <div class="card" data-category="starwars">
       <h2>Star Wars Merch</h2>
       <div class="product-thumbs">
-        <img src="images/lightsaber.jpg" alt="Lightsaber">
-        <img src="images/r2d2.jpg" alt="Interactive R2-D2">
+        <img src="images/sw3.jpg" alt="Lightsaber">
+        <img src="images/sw4.jpg" alt="Interactive R2-D2">
       </div>
     </div>
   </div>
