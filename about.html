@@ -1,39 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Arngren.net</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us – Arngren.net</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #e3e6e6; }
-    header { background-color: #232f3e; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; }
-    .about-section { background: white; margin: 2rem; padding: 2rem; border-radius: 8px; }
-    footer { background-color: #232f3e; color: white; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.9rem; }
+    /* ===== Base ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0d1b2a, #1b263b);
+      color: #fff;
+      min-height: 100vh;
+    }
+    header, footer {
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.4rem; font-weight: bold; }
+    nav a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a.active, nav a:hover { color: #ffcc00; }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      border-bottom: 3px solid #ffcc00;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ===== Content Card ===== */
+    .content {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .content .card {
+      background: #fff;
+      color: #0d1b2a;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .content h2 {
+      margin-top: 1rem;
+      color: #001f3f;
+      font-size: 1.6rem;
+    }
+    .content p {
+      margin: 0.5rem 0 1rem;
+      line-height: 1.6;
+    }
+    .content ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div><strong>Arngren.net</strong></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <header>
+    <span class="logo">Arngren.net</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<section class="about-section">
-  <h1>About Arngren.net</h1>
-  <p>Founded in Norway, Arngren.net is one of the earliest pioneers of online shopping. Since the late 1990s, Arngren.net has offered customers a diverse collection of unique, cutting-edge gadgets and electric vehicles. Inspired by innovation and practicality, our Norwegian team sought to bring futuristic technology directly to homes around the world — long before e-commerce became mainstream.</p>
-  <p>Today, Arngren.net continues to celebrate the spirit of discovery by providing gadgets that make everyday life easier, more exciting, and more connected.</p>
-</section>
+  <section class="hero">
+    <h1>About Us</h1>
+  </section>
 
-<footer>
-  &copy; 2025 Arngren.net | Customer Service | Shipping & Returns | Privacy Policy
-</footer>
+  <div class="content">
+    <div class="card">
+      <h2>Our Story</h2>
+      <p>
+        Founded in Norway in 1997, Arngren.net quickly became one of the first online electronics outlets,
+        offering elektronikk, lysorgel, kamera, and oversetter devices. We’ve spent decades bringing
+        cutting-edge technology from around the globe right to your doorstep.
+      </p>
+
+      <h2>Milestones</h2>
+      <ul>
+        <li>1997 – Launched the first Arngren.net online store</li>
+        <li>2025 – Complete redesign for a sleek, modern shopping experience</li>
+      </ul>
+
+      <h2>Our Values</h2>
+      <p>
+        <strong>Quality:</strong> Reliable products you can trust.<br>
+        <strong>Accessibility:</strong> Easy, global shipping options.<br>
+        <strong>Customer Focus:</strong> 24/7 support and satisfaction guarantee.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Arngren.net | Explore Future Tech Today
+  </footer>
 
 </body>
 </html>
-

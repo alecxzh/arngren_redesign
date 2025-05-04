@@ -1,108 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Arngren.net</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products – Arngren.net</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #e3e6e6; }
-    header { background-color: #232f3e; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    header input { width: 40%; padding: 0.5rem; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; }
-    .category-section { background: white; margin: 1rem; border-radius: 8px; padding: 1rem; }
-    .category-section h2 { margin-top: 0; }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      padding: 1rem 0;
+    /* ===== Base ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0d1b2a, #1b263b);
+      color: #fff;
+      min-height: 100vh;
     }
-    .product {
-      background: #fff;
-      padding: 1rem;
+    header, footer {
+      background: rgba(0,0,0,0.85);
+      padding: 1rem 2rem;
       text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 8px;
     }
-    .product img { width: 150px; height: 150px; object-fit: cover; }
-    footer { background-color: #232f3e; color: white; text-align: center; padding: 1rem; font-size: 0.9rem; margin-top: 2rem; }
-    .button { background-color: #ff9900; border: none; padding: 0.5rem 1rem; color: white; border-radius: 4px; cursor: pointer; margin-top: 0.5rem; }
-    .button:hover { background-color: #e68a00; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.4rem; font-weight: bold; }
+    nav a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a.active, nav a:hover { color: #ffcc00; }
+
+    /* ===== Hero ===== */
+    .hero {
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      border-bottom: 2px solid #ffcc00;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    /* ===== Filters ===== */
+    .filters {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .filters button {
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      background: #283845;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .filters button.active,
+    .filters button:hover {
+      background: #ffcc00;
+      color: #0d1b2a;
+    }
+
+    /* ===== Grid ===== */
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 3rem;
+      padding: 0 2rem 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      color: #0d1b2a;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card.hide { display: none; }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+    }
+    .card h2 {
+      padding: 1rem;
+      font-size: 1.4rem;
+      background: #f0f0f0;
+      margin: 0;
+    }
+    .product-thumbs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      padding: .75rem 1rem 1.25rem;
+    }
+    .product-thumbs img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <span class="logo">Arngren.net</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <div><strong>Arngren.net</strong></div>
-  <input type="text" placeholder="Search products...">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="index.html#about">About</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
-</header>
+  <section class="hero">
+    <h1>Our Products</h1>
+  </section>
 
-<!-- Electric Vehicles -->
-<section class="category-section">
-  <h2>Electric Vehicles</h2>
-  <div class="products-grid">
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Electric Scooter">
-      <h3>Electric Scooter</h3>
-      <p>$499.99</p>
-      <button class="button">Add to Cart</button>
+  <div class="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="electric">Electric Vehicles</button>
+    <button data-filter="rc">RC & Drones</button>
+    <button data-filter="gadget">Gadget Toys</button>
+    <button data-filter="smart">Smart Electronics</button>
+    <button data-filter="robots">Toy Robots</button>
+    <button data-filter="starwars">Star Wars</button>
+  </div>
+
+  <div class="section-grid">
+    <!-- Electric Vehicles -->
+    <div class="card" data-category="electric">
+      <h2>Electric Vehicles</h2>
+      <div class="product-thumbs">
+        <img src="images/hoverbike.jpg" alt="Hoverbike">
+        <img src="images/e_scooter.jpg" alt="Compact E-Scooter">
+      </div>
     </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Electric Bike">
-      <h3>Electric Bike</h3>
-      <p>$899.99</p>
-      <button class="button">Add to Cart</button>
+
+    <!-- RC & Drones -->
+    <div class="card" data-category="rc">
+      <h2>RC & Drones</h2>
+      <div class="product-thumbs">
+        <img src="images/rc_jet.jpg" alt="RC Jet Plane">
+        <img src="images/fpv_drone.jpg" alt="FPV Racing Drone">
+      </div>
+    </div>
+
+    <!-- Gadget Toys -->
+    <div class="card" data-category="gadget">
+      <h2>Gadget Toys</h2>
+      <div class="product-thumbs">
+        <img src="images/magnetic_cube.jpg" alt="Magnetic Fidget Cube">
+        <img src="images/hologram_toy.jpg" alt="Mini Hologram Toy">
+      </div>
+    </div>
+
+    <!-- Smart Electronics -->
+    <div class="card" data-category="smart">
+      <h2>Smart Electronics</h2>
+      <div class="product-thumbs">
+        <img src="images/voice_assistant.jpg" alt="Voice Assistant">
+        <img src="images/ai_pet_feeder.jpg" alt="AI Pet Feeder">
+      </div>
+    </div>
+
+    <!-- Toy Robots -->
+    <div class="card" data-category="robots">
+      <h2>Toy Robots</h2>
+      <div class="product-thumbs">
+        <img src="images/robot_arm.jpg" alt="Robot Arm">
+        <img src="images/dancing_robot.jpg" alt="Dancing Robot">
+      </div>
+    </div>
+
+    <!-- Star Wars Merch -->
+    <div class="card" data-category="starwars">
+      <h2>Star Wars Merch</h2>
+      <div class="product-thumbs">
+        <img src="images/lightsaber.jpg" alt="Lightsaber">
+        <img src="images/r2d2.jpg" alt="Interactive R2-D2">
+      </div>
     </div>
   </div>
-</section>
 
-<!-- Home Innovations -->
-<section class="category-section">
-  <h2>Home Innovations</h2>
-  <div class="products-grid">
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Smart Home Hub">
-      <h3>Smart Home Hub</h3>
-      <p>$199.99</p>
-      <button class="button">Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Smart Light System">
-      <h3>Smart Light System</h3>
-      <p>$89.99</p>
-      <button class="button">Add to Cart</button>
-    </div>
-  </div>
-</section>
+  <footer>
+    &copy; 2025 Arngren.net | Explore Future Tech Today
+  </footer>
 
-<!-- Outdoor Gadgets -->
-<section class="category-section">
-  <h2>Outdoor Gadgets</h2>
-  <div class="products-grid">
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="RC Drone">
-      <h3>RC Drone</h3>
-      <p>$299.99</p>
-      <button class="button">Add to Cart</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/150" alt="Portable Solar Charger">
-      <h3>Portable Solar Charger</h3>
-      <p>$59.99</p>
-      <button class="button">Add to Cart</button>
-    </div>
-  </div>
-</section>
+  <script>
+    // Filtering functionality
+    const buttons = document.querySelectorAll('.filters button');
+    const cards = document.querySelectorAll('.card');
 
-<footer>
-  &copy; 2025 Arngren.net | Customer Service | Shipping & Returns | Privacy Policy
-</footer>
-
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // set active button
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hide');
+          } else {
+            card.classList.add('hide');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,39 +1,60 @@
+<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Arngren.net</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us – Arngren.net</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #e3e6e6; }
-    header { background-color: #232f3e; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; }
-    .contact-section { background: white; margin: 2rem; padding: 2rem; border-radius: 8px; }
-    footer { background-color: #232f3e; color: white; text-align: center; padding: 1rem; margin-top: 2rem; font-size: 0.9rem; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI', sans-serif; background:linear-gradient(to bottom right,#0d1b2a,#1b263b); color:#fff; min-height:100vh; }
+    header, footer { background:rgba(0,0,0,0.85); padding:1rem 2rem; text-align:center; }
+    header { position:sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
+    .logo{font-size:1.4rem;font-weight:bold}
+    nav a{color:#fff;margin-left:1rem;text-decoration:none;font-weight:600}
+    nav a.active, nav a:hover{color:#ffcc00}
+    .hero{text-align:center;padding:3rem 1rem 1.5rem}
+    .hero h1{font-size:2.8rem;border-bottom:3px solid #ffcc00;display:inline-block;padding-bottom:0.5rem}
+    .content{max-width:600px;margin:2rem auto;padding:0 1rem}
+    .content .card{background:#fff;color:#0d1b2a;padding:1.5rem;border-radius:8px;}
+    .content p{margin:0.5rem 0;}
+    .content h2{margin-top:1rem;color:#001f3f}
+    .content form input,.content form textarea{width:100%;margin:0.5rem 0;padding:0.5rem;border:1px solid #ccc;border-radius:4px}
+    .content form button{padding:0.6rem 1.2rem;background:#ffcc00;color:#0d1b2a;border:none;border-radius:4px;cursor:pointer}
   </style>
 </head>
 <body>
+  <header>
+    <span class="logo">Arngren.net</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <div><strong>Arngren.net</strong></div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <section class="hero">
+    <h1>Contact Us</h1>
+  </section>
 
-<section class="contact-section">
-  <h1>Contact Us</h1>
-  <p><strong>Email:</strong> support@arngren.net</p>
-  <p><strong>Phone:</strong> +47 123 45 678 (Norway)</p>
-  <p>Feel free to reach out to us for any questions about products, orders, or partnership opportunities.</p>
-</section>
+  <div class="content card">
+    <p><strong>Tel:</strong> +47-22149166</p>
+    <p><strong>Mobil:</strong> +47-92060873</p>
+    <p><strong>Fax:</strong> +47-22148237</p>
+    <p><strong>Skype:</strong> frithjof.arngren</p>
+    <p><strong>Email:</strong> frithjof@arngren.net</p>
+    <p><strong>Email:</strong> frithjof.arngren@gmail.com</p>
 
-<footer>
-  &copy; 2025 Arngren.net | Customer Service | Shipping & Returns | Privacy Policy
-</footer>
+    <h2>Send Us a Message</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
+  <footer>&copy; 2025 Arngren.net | Explore Future Tech Today</footer>
 </body>
 </html>
